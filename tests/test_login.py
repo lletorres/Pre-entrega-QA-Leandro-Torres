@@ -19,7 +19,7 @@ def test_login():
      titulo = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "app_logo"))).text
      assert titulo == "Swag Labs"
 
-     Subtitulo = driver.find_element(By.CSS_SELECTOR, "[data-test='title']")
-     assert Subtitulo.text == "Products"
+     Subtitulo = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-test='title']"))).text
+     assert Subtitulo == "Products"
    finally:
      driver.quit()   
